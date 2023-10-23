@@ -1,0 +1,22 @@
+{
+  "name": "httpback",
+  "version": "1.0.0",
+  "description": "HTTP backend",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "forever server.js",
+    "watch": "forever -w server.js",
+    "stop": "forever stopall"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "author": "saff84",
+  "license": "MIT",
+  "dependencies": {
+    "forever": "^3.0.4",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0"
+  }
+}

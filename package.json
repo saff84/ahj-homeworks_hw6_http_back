@@ -1,5 +1,5 @@
 {
-  "name": "httpback",
+  "name": "http_back",
   "version": "1.0.0",
   "description": "HTTP backend",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "stop": "forever stopall"
   },
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "author": "saff84",
   "license": "MIT",

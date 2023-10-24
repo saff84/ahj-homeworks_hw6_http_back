@@ -23,8 +23,8 @@ class TicketFull {
 }
 
 let ticketsFull = [
-  new TicketFull(0, 'Install Win', 'Install Windows 10, drivers for printer, MS Office, save documents and mediafiles', false, new Date().toString().slice(3,21)),
-  new TicketFull(1, 'Replace cartridge', 'Replace cartridge for printer Samsung in cabinet #404', true, new Date().toString().slice(3,21))
+  new TicketFull(0, 'Install Win', 'Install Windows 10, drivers for printer, MS Office, save documents and mediafiles', 'in work', new Date().toString().slice(3,21)),
+  new TicketFull(1, 'Replace cartridge', 'Replace cartridge for printer Samsung in cabinet #404', 'done', new Date().toString().slice(3,21))
 ];
 
 // CORS
@@ -95,7 +95,7 @@ app.use(async ctx => {
       return;
     case 'createTicket':
       const nextId = ticketsFull.length;
-      ticketsFull.push(new TicketFull(nextId, body.title, body.description, false, new Date().toString().slice(3,21)));
+      ticketsFull.push(new TicketFull(nextId, body.title, body.description, body.status, new Date().toString().slice(3,21)));
       ctx.response.body = ticketsFull[nextId];
       console.log(ticketsFull.length);
       return;
@@ -125,5 +125,5 @@ app.use(async (ctx) => {
   console.log(ctx.response);
 });
 
-const port = process.env.PORT || 7070;
+const port = process.env.PORT || 8081;
 const server = http.createServer(app.callback()).listen(port);
